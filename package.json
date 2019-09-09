@@ -1,0 +1,11 @@
+{
+  "name": "vue-cli-context",
+  "version": "1.2.5",
+  "description": "Sampily to get the Packages in Directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joenix",
+  "license": "MIT"
+}
