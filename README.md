@@ -36,7 +36,7 @@ export default ({ say }) => {
   console.log(say);
   // each package must set propert: `name`
   return {
-    name: `sample`
+    name: `sample`,
   };
 };
 ```

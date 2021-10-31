@@ -1,11 +1,9 @@
-import path from "path";
-
 /**
  * @param pkg {object}
  * ======== ======== ========
  */
 function rip(pkg = {}) {
-  return pkg.default || pkg;
+  return pkg.default === undefined ? pkg : pkg.default;
 }
 
 /**
@@ -37,13 +35,17 @@ function insert(name, pkg, packages) {
  * ======== ======== ========
  */
 function offer({ context, expect, inject }, packages = {}) {
+  // If no Context
+  if (context === undefined) {
+    return packages;
+  }
   // Use Context in Require
   if (context.constructor !== Function) {
     return context;
   }
 
   // Packages
-  context.keys().map(key => {
+  context.keys().map((key) => {
     // file name
     const name = key.replace(/.*\/([\w\-]+)\.\w+$/, "$1");
     // rip pkg
@@ -68,7 +70,7 @@ function contextual(
   sync = true
 ) {
   return sync
-    ? new Promise(resolve => resolve(offer(options)))
+    ? new Promise((resolve) => resolve(offer(options)))
     : offer(options);
 }
 

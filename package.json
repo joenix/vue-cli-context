@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-context",
-  "version": "1.2.5",
+  "version": "5.0.2",
   "description": "Sampily to get the Packages in Directory",
   "main": "index.js",
   "scripts": {
